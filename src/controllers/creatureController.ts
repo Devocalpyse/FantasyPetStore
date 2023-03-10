@@ -42,7 +42,7 @@ export const oneCreature: RequestHandler =async (req, res, next) => {
 
 // Edit a creature
     // GET
-    export const editPage: RequestHandler =async (req, res, next) => {
+    export const editPage: RequestHandler = async (req, res, next) => {
         let searchId = req.params.creatureId;
         let searchItem: Creature | null = await Creature.findByPk(searchId)
 
@@ -54,6 +54,20 @@ export const oneCreature: RequestHandler =async (req, res, next) => {
     }
 
     // POST
+    export const editCreature: RequestHandler = async (req, res, next) => {
+        let searchId = req.params.creatureId;
+        let updatedCreature: Creature = req.body;
+
+        let [updated] = await Creature.update(updatedCreature, {
+            where: { creatureId: searchId }
+        });
+
+        if (updated === 1) {
+            res.redirect('/creatures')
+        } else {
+            res.render('error', { message: 'Creature modifications could not be made. Most likely, you put more than 255 characters into one or more fields', title: 'Failed to change creature'})
+        }
+    }
 
 
 // Cast creature into oblivion
