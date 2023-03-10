@@ -13,7 +13,16 @@ export const getAllCreatures: RequestHandler = async (req, res, next) => {
 }
 
 // Get a single creature
+export const oneCreature: RequestHandler =async (req, res, next) => {
+    let searchId = req.params.creatureId;
+    let searchItem: Creature | null = await Creature.findByPk(searchId)
 
+    if (searchItem) {
+        res.render('creatureDetail', { creature: searchItem, title: searchItem.name })
+    } else {
+        res.status(404).render('error', { message: 'No creature like that exists.', title: "Error 404 - Creature not found"})
+    }
+}
 
 // Add a creature
     // GET

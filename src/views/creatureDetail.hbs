@@ -1,0 +1,21 @@
+{{#with creature}}
+  <article class='grid'>
+    <img src='{{imgUrl}}' alt='Picture of {{name}}' />
+    <div>
+      <hgroup>
+        <h1>{{name}}</h1>
+        <p>{{mythology}}</p>
+      </hgroup>
+      <hr />
+      <p>{{description}}</p>
+    </div>
+  </article>
+  <br />
+  <div class='grid'>
+    <a href='/creatures'><button class='outline'>Return</button></a>
+    <a href='/creatures/{{creatureId}}'><button>Edit</button></a>
+    <form action="/creatures/delete/{{creatureId}}" method="post">
+        <button class="contrast" type="submit">Delete</button>
+    </form>
+  </div>
+{{/with}}

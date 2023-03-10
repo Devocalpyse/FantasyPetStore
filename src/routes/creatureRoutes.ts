@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { creationPage, creationPost, getAllCreatures } from "../controllers/creatureController";
+import { creationPage, creationPost, getAllCreatures, oneCreature } from "../controllers/creatureController";
 
 const router = Router();
 
@@ -7,7 +7,7 @@ const router = Router();
 router.get('/', getAllCreatures)
 
 // Get a single creature
-
+router.get('/:creatureId', oneCreature)
 
 // Add a creature
     // GET
