@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { creationPage, creationPost, editCreature, editPage, getAllCreatures, oneCreature } from "../controllers/creatureController";
+import { creationPage, creationPost, editCreature, editPage, getAllCreatures, obliterateCreature, oneCreature } from "../controllers/creatureController";
 
 const router = Router();
 
@@ -24,6 +24,6 @@ router.get('/:creatureId', oneCreature)
     router.post('/edit/:creatureId', editCreature)
 
 // Cast creature into oblivion
-
+router.post('/delete/:creatureId', obliterateCreature)
 
 export default router;

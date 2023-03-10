@@ -71,3 +71,16 @@ export const oneCreature: RequestHandler =async (req, res, next) => {
 
 
 // Cast creature into oblivion
+export const obliterateCreature: RequestHandler = async (req, res, next) => {
+    let searchId = req.params.creatureId;
+
+    let obliterated = await Creature.destroy({
+        where: { creatureId: searchId }
+    })
+
+    if (obliterated) {
+        res.redirect('/creatures')
+    } else {
+        res.status(404).render('error', { message: "Creature could not be destroyed. Perhaps it is immortal?" })
+    }
+}
