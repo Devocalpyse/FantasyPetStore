@@ -1,10 +1,4 @@
-import { 
-    InferAttributes, 
-    InferCreationAttributes, 
-    Model, 
-    Sequelize, 
-    DataTypes 
-} from 'sequelize';
+import { InferAttributes, InferCreationAttributes, Model, Sequelize, DataTypes } from 'sequelize';
 
 export class Creature extends Model<InferAttributes<Creature>, InferCreationAttributes<Creature>> {
   declare creatureId: number;
@@ -44,13 +38,13 @@ export function CreatureFactory(sequelize: Sequelize) {
       createdAt: {
         type: DataTypes.DATE,
         allowNull: false,
-        defaultValue: DataTypes.NOW
+        defaultValue: DataTypes.NOW,
       },
       updatedAt: {
         type: DataTypes.DATE,
         allowNull: false,
-        defaultValue: DataTypes.NOW
-      }
+        defaultValue: DataTypes.NOW,
+      },
     },
     {
       freezeTableName: true,
