@@ -42,7 +42,16 @@ export const oneCreature: RequestHandler =async (req, res, next) => {
 
 // Edit a creature
     // GET
+    export const editPage: RequestHandler =async (req, res, next) => {
+        let searchId = req.params.creatureId;
+        let searchItem: Creature | null = await Creature.findByPk(searchId)
 
+        if (searchItem) {
+            res.render('editCreature', { creature: searchItem, title: `Editing ${searchItem.name}` })
+        } else {
+            res.status(404).render('error', { message: 'Something went wrong.', title: "Error 404 - Creature not found"})
+        }
+    }
 
     // POST
 

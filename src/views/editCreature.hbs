@@ -1,0 +1,25 @@
+{{#with creature}}
+<h1>Edit {{name}} </h1>
+<form action='/creatures/edit/{{creatureId}}' method='POST'>
+  <label for='name'>Name of creature</label>
+  <input type='text' name='name' placeholder='Dragon' value="{{name}}" />
+
+  <label for='description'>Description</label>
+  <input
+    type='text'
+    name='description'
+    placeholder='Dragons are the apex predators of the skies...'
+    value="{{description}}"
+  />
+
+  <label for='mythology'>Mythology</label>
+  <input type='text' name='mythology' placeholder='The Middle Ages' value="{{mythology}}" />
+
+  <label for='imgUrl'>Image Url</label>
+  <input type='text' name='imgUrl' value="{{imgUrl}}" />
+
+  <button type='submit'>Re-Summon</button>
+</form>
+{{/with}}
+
+<a href='/creatures'><button class='outline'>Return</button></a>
