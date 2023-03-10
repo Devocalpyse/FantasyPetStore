@@ -1,0 +1,15 @@
+<h1>Creatures for Adoption</h1>
+
+<div class="grid">
+    {{#each creatures}}
+        <article>
+            <header>{{name}}</header>
+            <img src="{{imgUrl}}" alt="A picture of {{name}}">
+            <footer>
+                <button><a href="/creatures/{{creatureId}}">Details</a></button>
+            </footer>
+        </article>
+    {{/each}}
+</div>
+
+<a href="/creatures/add">Create a creature</a>
