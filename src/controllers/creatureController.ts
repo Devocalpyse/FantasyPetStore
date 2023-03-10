@@ -18,10 +18,17 @@ export const getAllCreatures: RequestHandler = async (req, res, next) => {
 // Add a creature
     // GET
     export const creationPage: RequestHandler = async (req, res, next) => {
-        res.render('addCreature');
+        res.render('addCreature', {
+            title: "Creature Summoning"
+        });
     }
 
     // POST
+    export const creationPost: RequestHandler = async (req, res, next) => {
+        let newCreature: Creature = req.body;
+        await Creature.create(newCreature)
+        res.redirect('/creatures')
+    }
 
 
 // Edit a creature
