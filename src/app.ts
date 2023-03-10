@@ -17,7 +17,7 @@ app.set('view options', { layout: 'layout' });
 
 // Routing middleware (to-be-done)
 
-// Bad request routing:
+// Bad request routing (i.e. the "Backrooms" route):
 app.use((req: Request, res: Response, next: NextFunction) => {
   res.status(404).render('error', {
     message: 'This is not the URL you are looking for!',
@@ -25,6 +25,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 });
 
 // Syncing our database (to-be-done)
+
 
 // Server: 3000
 app.listen(3000);
