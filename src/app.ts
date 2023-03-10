@@ -2,6 +2,7 @@ import 'dotenv/config'
 import express, { NextFunction, Request, Response } from 'express';
 import path from 'path';
 import morgan from 'morgan';
+import { db } from './models';
 
 // Basic set-up
 const app = express();
@@ -25,7 +26,9 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 });
 
 // Syncing our database (to-be-done)
-
+db.sync().then(() => {
+    console.info("SKYNET CONNECTED.")
+})
 
 // Server: 3000
 app.listen(3000);

@@ -12,8 +12,8 @@ export class Creature extends Model<InferAttributes<Creature>, InferCreationAttr
   declare imgUrl: string;
   declare description: string;
   declare mythology: string;
-  declare createdOn?: Date;
-  declare updatedOn?: Date;
+  declare createdAt?: Date;
+  declare updatedAt?: Date;
 }
 
 export function CreatureFactory(sequelize: Sequelize) {
@@ -41,6 +41,16 @@ export function CreatureFactory(sequelize: Sequelize) {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      createdAt: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        defaultValue: DataTypes.NOW
+      },
+      updatedAt: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        defaultValue: DataTypes.NOW
+      }
     },
     {
       freezeTableName: true,
