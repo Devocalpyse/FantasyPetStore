@@ -17,7 +17,9 @@ export const getAllCreatures: RequestHandler = async (req, res, next) => {
 
 // Add a creature
     // GET
-    
+    export const creationPage: RequestHandler = async (req, res, next) => {
+        res.render('addCreature');
+    }
 
     // POST
 

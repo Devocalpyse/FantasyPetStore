@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getAllCreatures } from "../controllers/creatureController";
+import { creationPage, getAllCreatures } from "../controllers/creatureController";
 
 const router = Router();
 
@@ -11,10 +11,10 @@ router.get('/', getAllCreatures)
 
 // Add a creature
     // GET
-    router.get('/add', )
+    router.get('/add', creationPage)
 
     // POST
-
+    // router.post('/add', creationPost)
 
 // Edit a creature
     // GET
