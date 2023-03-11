@@ -14,9 +14,6 @@ const router = Router();
 // Get all creatures
 router.get('/', getAllCreatures);
 
-// Get a single creature
-router.get('/:creatureId', oneCreature);
-
 // Add a creature
     // GET
     router.get('/add', creationPage);
@@ -33,5 +30,8 @@ router.get('/:creatureId', oneCreature);
 
 // Cast creature into oblivion
 router.post('/delete/:creatureId', obliterateCreature);
+
+// Get a single creature
+router.get('/:creatureId', oneCreature);
 
 export default router;
