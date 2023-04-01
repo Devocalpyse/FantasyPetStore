@@ -1,5 +1,5 @@
-# BackendMidterm
-A midterm project for my backend typescript frameworks class.
+# A Fantasy Pet Store
+built using Typescript, Handlebars, and other Node.js packages
 
 ## Premise
 This is meant to be a cheeky twist on a pet store -- instead of bunnies and dogs, you might take home a dragon or a direwolf to live with you! Basically, a pet store, but fantasy.
